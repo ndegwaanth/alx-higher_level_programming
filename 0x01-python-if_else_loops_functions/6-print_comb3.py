@@ -2,6 +2,6 @@
 for number in range(0, 10):
     for digit in range(number + 1, 10):
         if (number == 8 and digit == 9):
-            print(f"{number}{digit}")
+            print(f"{number}{digit}\n")
         else:
             print(f"{number}{digit}", end=",")
