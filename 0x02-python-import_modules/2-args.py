@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # import sys
 
-"__name__" == "__main__"
+__name__ == "__main__"
 import sys
 
 iterate = len(sys.argv) - 1
