@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-import sys
+# import sys
 
 "__name__" == "__main__"
+import sys
 
 iterate = len(sys.argv) - 1
 if (iterate == 0):
