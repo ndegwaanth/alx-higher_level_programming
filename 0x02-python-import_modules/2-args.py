@@ -2,7 +2,7 @@
 import sys
 
 "__name__" == "__main__"
-iterate = len(sys.argv)
+iterate = len(sys.argv) - 1
 if (iterate == 0):
     print("0 argument.")
 elif (iterate == 1):
