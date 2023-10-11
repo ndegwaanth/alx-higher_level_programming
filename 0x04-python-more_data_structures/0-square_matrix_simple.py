@@ -1,4 +1,4 @@
-#1/usr/bin/python3
+#!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
     second_matrix = []
     for row_1 in matrix:
