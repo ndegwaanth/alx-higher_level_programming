@@ -3,7 +3,7 @@
 /**
  * print_dlistint - print all the element in te dlistint
  * @h: this is a pointer
- * return: number of nodes
+ * Return: number of nodes
  */
 size_t print_dlistint(const dlistint_t *h)
 {
@@ -11,8 +11,9 @@ size_t print_dlistint(const dlistint_t *h)
 
 	while (h != NULL)
 	{
-		print("%d", h->n);
+		printf("%d\n", h->n);
 		h = h->next;
 		iterate++;
 	}
-	return (count);
+	return (iterate);
+}
