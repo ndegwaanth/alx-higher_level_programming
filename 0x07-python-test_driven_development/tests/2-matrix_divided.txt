@@ -1,0 +1,25 @@
+test case for "matrix_divided function
+
+first import "matrix_divided" from "2-matrix_divided.py"
+
+>>> matrix = __import__("2-matrix_divided").matrix_divided
+>>> x = [[1,2,3], [4,5,6]]
+>>> matrix(x, 3)
+[[0.33, 0.33, 0.33], [1.33, 1.33, 1.33]]
+>>> matrix(x, 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+>>> x = [["str",2,3], [4,5,6]]
+>>> matrix(x, 3)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+>>> x = [1, 2, 3]
+>>> matrix(x, 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> x = [[1,2,3], [4,5,6]]
+>>> matrix(x, 0.5)
+[[2.0, 2.0, 2.0], [8.0, 8.0, 8.0]]

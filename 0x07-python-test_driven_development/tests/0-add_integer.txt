@@ -1,0 +1,26 @@
+test file for "add_integer" fuction
+============================
+first import"0-add_integer" module to gain access to add_integer
+
+>>> import doctest
+>>> add = __import__('0-add_integer').add_integer
+>>> add(1,2)
+3
+>>> add("str", 2)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add(2, "str")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add("str", "str")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add(8)
+106
+>>> add(str)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
