@@ -64,3 +64,83 @@ class Rectangle(Base):
                     @value: this is the value to be assigned to the y
             """
             self.__y = value
+
+        def area(self):
+            """
+            Return area of the rectangle
+            """
+            area = self.width * self.height
+
+            return area
+
+        def display(self):
+            """
+            Prints size of rectangle using #
+            """
+            for _ in range(self.y):
+                print()
+
+            for _ in range(self.height):
+                print(" " * self.x + "#" * self.width)
+
+        def __str__(self):
+            """
+            Return the print() and str() representation of the Rectangle.
+            """
+            return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x,
+                                                       self.y,
+                                                       self.width,
+                                                       self.height)
+
+        def update(self, *args, **kwargs):
+            """
+            Assign arguments to attributes based on their positions.
+            """
+            if args:
+                for count, arg in enumerate(args):
+                    if count == 0:
+                        self.id = arg
+                    elif count == 1:
+                        self.width = arg
+                    elif count == 2:
+                        self.height = arg
+                    elif count == 3:
+                        self.x = arg
+                    elif count == 4:
+                        self.y = arg
+                    else:
+                        break
+
+            elif len(kwargs) > 0:
+                for key, value in kwargs.items():
+                    if key == "id":
+                        self.id = value
+                    elif key == "width":
+                        self.width = value
+                    elif key == "height":
+                        self.height = value
+                    elif key == "x":
+                        self.x = value
+                    elif key == "y":
+                        self.y = value
+
+                # than 5, and one of the attributes is at the end
+
+        def to_dictionary(self):
+            """
+            Represents a dictionary representation of rectangle
+            """
+            rec_dict = {
+                    "id": self.id,
+                    "width": self.width,
+                    "height": self.height,
+                    "x": self.x,
+                    "y": self.y
+            }
+
+            return rec_dict
+
+
+if __name__ == "__main__":
+    pass
