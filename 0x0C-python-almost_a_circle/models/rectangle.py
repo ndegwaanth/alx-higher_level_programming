@@ -25,7 +25,6 @@ class Rectangle(Base):
                     @value: the value to assign to the new width
             """
             self.__width = value
-            return self.__width
 
         @property
         def height(self):
@@ -39,7 +38,6 @@ class Rectangle(Base):
                    @value: the value to assign to the new height
             """
             self.__height = height
-            return self.__height
 
         @property
         def x_func(self):
@@ -53,12 +51,11 @@ class Rectangle(Base):
                     @value: this is the value beign set to x
             """
             self.__x = value
-            return self.__x
 
         @property
         def y_func(self):
             """this is the getter method for the y_func"""
-            return selff.__y
+            return self.__y
 
         @y.setter
         def y_func(self, value):
@@ -67,4 +64,3 @@ class Rectangle(Base):
                     @value: this is the value to be assigned to the y
             """
             self.__y = value
-            return self.__y
