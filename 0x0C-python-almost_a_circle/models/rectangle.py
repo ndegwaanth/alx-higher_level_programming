@@ -40,12 +40,12 @@ class Rectangle(Base):
             self.__height = height
 
         @property
-        def x_func(self):
+        def x(self):
             """ this is the getter for the x_func"""
             return self.__x
 
         @x.setter
-        def x_func(self, value):
+        def x(self, value):
             """ this is the setter for the x_func
                 args:
                     @value: this is the value beign set to x
@@ -53,12 +53,12 @@ class Rectangle(Base):
             self.__x = value
 
         @property
-        def y_func(self):
+        def y(self):
             """this is the getter method for the y_func"""
             return self.__y
 
         @y.setter
-        def y_func(self, value):
+        def y(self, value):
             """ this is the setter for the y_func
                 args:
                     @value: this is the value to be assigned to the y
