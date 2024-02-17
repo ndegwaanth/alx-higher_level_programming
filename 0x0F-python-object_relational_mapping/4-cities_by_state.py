@@ -16,7 +16,7 @@ if __name__ == "__main__":
                              port=3306)
         cursor = db.cursor()
 
-        cursor.execute("SELECT * FROM cities ORDER BY id ASC")
+        cursor.execute("SELECT * FROM cities ORDER BY cities.id ASC")
 
         cities = cursor.fetchall()
 
