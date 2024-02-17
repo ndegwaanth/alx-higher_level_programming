@@ -6,13 +6,13 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: python script.py <username> <password> <database_name> <state_name>")
         sys.exit(1)
 
     try:
         # Connect to MySQL server
         db = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                             passwd=sys.argv[2], db=sys.argv[3], port=3306)
+                             passwd=sys.argv[2], db=sys.argv[3],
+                             port=3306)
         cur = db.cursor()
 
         # Prepare the query with a placeholder to prevent SQL injection
