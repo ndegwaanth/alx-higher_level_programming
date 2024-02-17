@@ -1,8 +1,17 @@
+#!/usr/bin/env python3
+
 import MySQLdb
 import sys
 
 
 def list_states(username, password, database_name):
+    """
+        This prototype  used to define the connection to the database.
+        args:
+            username: database unsername
+            password: database password
+            database_name: name of the database created
+    """
     # Connect to MySQL server
     try:
         db = MySQLdb.connect(user=username, passwd=password, db=database_name, host='localhost', port=3306)
