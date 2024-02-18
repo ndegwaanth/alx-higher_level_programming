@@ -20,14 +20,7 @@ if __name__ == "__main__":
 
     # Create a session
     Session = sessionmaker(bind=engine)
-    session = Session()
-
-    # Query for all City objects from the database sorted by id
-    cities = session.query(City).order_by(City.id).all()
-
-    # Display the results
-    for city in cities:
-        print(f"{city.state.name}: ({city.id}) {city.name}")
-
-    # Close the session
-    session.close()
+    session = Sessio()
+    for instance in (session.query(State.name, City.id, City.name)
+                     .filter(State.id == City.state_id)):
+        print(instance[0] + ": (" + str(instance[1]) + ") " + instance[2])
