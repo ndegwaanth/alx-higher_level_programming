@@ -10,7 +10,7 @@ fi
 url=$1
 
 # Send a request to the URL using curl and get the size of the response body in bytes
-size=$(curl -s "$url" | wc -c)
+size=$(curl -s -w "%{size_download}" -o /dev/null "$url")
 
 # Display the size of the body of the response
 echo "$size"
