@@ -11,13 +11,13 @@ if __name__ == "__main__":
     email = sys.argv[2]
 
     # Encode the email parameter
-    data = urllib.parse.urlencode({'email': email}).encode('utf-8')
+    data = urllib.parse.urlencode({'email': email}).encode('ascii')
 
     try:
         # Send a POST request with the email parameter
         with urllib.request.urlopen(url, data=data) as response:
             # Read and decode the response body
             body_response = response.read().decode('utf-8')
-        print(f"Your email is: {body_response}")
+            print(f"Your email is: {body_response}")
     except urllib.error.URLError as e:
         print("Error accessing URL:", e)
