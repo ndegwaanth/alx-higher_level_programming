@@ -12,7 +12,6 @@ if __name__ == "__main__":
 
     # Encode the email parameter
     data = urllib.parse.urlencode({'email': email}).encode('ascii')
-
     try:
         # Send a POST request with the email parameter
         with urllib.request.urlopen(url, data=data) as response:
@@ -20,4 +19,4 @@ if __name__ == "__main__":
             body_response = response.read().decode('utf-8')
             print(f"Your email is: {body_response}")
     except urllib.error.URLError as e:
-        print("Error accessing URL:", e)
+        print("Error accessing URL", e)
