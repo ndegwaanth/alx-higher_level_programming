@@ -1,16 +1,3 @@
 #!/bin/bash
-
-# Check if the user provided a URL
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 <URL>"
-    exit 1
-fi
-
-# Get the URL from the command line argument
-url=$1
-
-# Send a request to the URL using curl and get the size of the response body in bytes
-size=$(curl -s -w "%{size_download}" -o /dev/null "$url")
-
-# Display the size of the body of the response
-echo "$size"
+#  Bash script that takes in a URL, sends a request to that URL, and displays the size of the body of the response
+curl -sI "$1" | grep "Content-Length" | tr -d '\r' | cut -d ' ' -f2
