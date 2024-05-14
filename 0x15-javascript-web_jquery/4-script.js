@@ -1,10 +1,9 @@
-import $ from 'jquery';
-
-// Execute when the document is fully loaded
-$(document).ready(function () {
-  // Bind click event to the element with id 'toggle_header'
-  $('#toggle_header').click(function () {
-    // Toggle the class 'red' and 'green' on the <header> element
-    $('header').toggleClass('red green');
-  });
+$('#toggle_header').click(function () {
+	if ($('header').hasClass(green)){
+		$('header').removeClass(green);
+		$('header').addClass(red);
+	} else if ($('header').hasClass(red)){
+		$('header').removeClass(red);
+		$('header').addClass(green);
+	}
 });
