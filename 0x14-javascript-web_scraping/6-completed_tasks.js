@@ -1,33 +1,20 @@
 #!/usr/bin/node
-
 const request = require('request');
-
-const apiUrl = process.argv[2];
-
-request(apiUrl, function (error, response, body) {
-  if (!error && response.statusCode === 200) {
-    try {
-      const todos = JSON.parse(body);
-
-      const completed = {};
-
-      todos.forEach((todo) => {
-        if (todo.completed) {
-          if (completed[todo.userId] === undefined) {
-            completed[todo.userId] = 1;
-          } else {
-            completed[todo.userId]++;
-          }
+const url = process.argv[2];
+const object = {};
+request(url, function (err, resp, body) {
+  if (resp.statusCode === 200) {
+    for (const task of JSON.parse(body)) {
+      if (task.completed) {
+        if (object[task.userId]) {
+          object[task.userId]++;
+        } else {
+          object[task.userId] = 1;
         }
-      });
-
-      const output = `{${Object.entries(completed).map(([key, value]) => ` '${key}': ${value}`).join(',\n ')} }`;
-
-      console.log(Object.keys(completed).length > 2 ? output : completed);
-    } catch (parseError) {
-      console.error('Error parsing JSON:', parseError);
+      }
     }
   } else {
-    console.error('Error:', error);
+    console.log(err);
   }
+  console.log(object);
 });
